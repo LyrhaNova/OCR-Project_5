@@ -3,13 +3,12 @@ import {
    Routes,
    Route,
  } from "react-router-dom";
-// import { Home } from '../../pages/page_home'
-// import { About } from '../../pages/page_about'
 import { Accommodation } from '../../pages/page_accommodation'
 import { Error } from '../Error/error'
 import { Header } from '../Header/header'
 import { HeroHeader } from "../HeroHeaderHome/heroheader";
-import { HeroHeaderAbout } from "../HeroHeaderAbout/heroheader"
+import { HeroHeaderAbout } from "../HeroHeaderAbout/heroheader_about"
+import { Cards } from '../Cards/cards'
 import { Footer } from '../Footer/footer'
 
 const index = () => {
@@ -35,6 +34,7 @@ function HomeChild() {
    return (
       <>
       <HeroHeader />
+      <Cards />
       </>
    )
 }

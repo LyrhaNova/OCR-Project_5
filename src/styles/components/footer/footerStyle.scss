@@ -1,4 +1,4 @@
-footer {
+.footer {
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -7,10 +7,12 @@ footer {
    height: 209px;
    width: 100%;
    margin-top: 50px;
-   > .logoImgFooter {
+   
+   &__logo {
       margin-top: 45px;
    }
-   > p {
+
+   &__text {
       color: white;
       font-size: 24px;
    }

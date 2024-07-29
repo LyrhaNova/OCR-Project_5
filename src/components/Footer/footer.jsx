@@ -4,11 +4,11 @@ import '../../styles/components/footer/footerStyle.scss'
 
 export function Footer() {
   return (
-    <footer>
-      <div className='logoImgFooter'>
+    <footer className='footer'>
+      <div className='footer__logo'>
         <img src={LogoFooter} alt="Logo de Kasa" />
       </div>
-      <p>© Kasa. All rights reserved</p>
+      <p className='footer__text'>© Kasa. All rights reserved</p>
       </footer>
   )
 }

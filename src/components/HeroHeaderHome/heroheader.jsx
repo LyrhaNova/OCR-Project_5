@@ -1,14 +1,13 @@
-import Img from '../../assets/BackgroundHome.png'
-import '../../styles/components/heroHeader/heroHeaderStyle.scss'
-
+import Img from '../../assets/BackgroundHome.png';
+import '../../styles/components/heroHeader/heroheader_site.scss';
 
 export function HeroHeader() {
   return (
-   <section id="heroHeader">
-      <div className="Image">
-      <img src={Img} alt="Photo de montagnes" />
-      <h1>Chez vous, partout et ailleurs</h1>
+    <section className="hero-header">
+      <div className="hero-header__image-container">
+        <img src={Img} alt="Photo de montagnes" />
+        <h1 className="hero-header__title">Chez vous, partout et ailleurs</h1>
       </div>
-   </section>
-  )
+    </section>
+  );
 }

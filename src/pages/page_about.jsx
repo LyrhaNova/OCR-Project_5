@@ -1,8 +1,8 @@
-export function About() {
-   return (
-     <div>
-       <h1> À propos</h1>
-     </div>
-   )
- }
+// export function About() {
+//    return (
+//      <div>
+//        <h1> À propos</h1>
+//      </div>
+//    )
+//  }
  
