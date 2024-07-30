@@ -6,7 +6,7 @@ export function HeroHeader() {
     <section className="hero-header">
       <div className="hero-header__image-container">
         <img src={Img} alt="Photo de montagnes" />
-        <h1 className="hero-header__title">Chez vous, partout et ailleurs</h1>
+        <h1 className="hero-header__title">Chez vous,<br className='hero-header__br'/> partout et ailleurs</h1>
       </div>
     </section>
   );

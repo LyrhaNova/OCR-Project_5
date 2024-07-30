@@ -7,14 +7,31 @@
    height: 209px;
    width: 100%;
    margin-top: 50px;
-   
+   position:absolute;
+   left: 0;
+   right: 0;
    &__logo {
-      margin-top: 45px;
+      margin-top: 30px;
    }
-
    &__text {
       color: white;
       font-size: 24px;
    }
+   &__br {
+      display: none;
+   }
+   @media (max-width: 540px) {
+      
+      margin-top: 20px;
+      &__text {
+         font-size: 12px;
+         text-align: center;
+         line-height: 20px;
+      }
+      &__br {
+         
+         display: flex;
+      }
+      
+   }
 }
-

@@ -1,0 +1,47 @@
+.listContainer {
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   & ul {
+      width: 85%;
+      padding: 0;
+      margin: 0;
+   }
+   &__li {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      background-color: #FF6060;
+      border-radius: 5px;
+      margin-top: 30px;
+      list-style-type: none;
+   }
+   &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 54px;
+   }
+   &__word {
+      color: white;
+      font-size: 24px;
+      padding-left: 20px;
+   }
+   .icon {
+      cursor: pointer;
+   }
+   .svg-inline--fa.fa-chevron-up,
+   .svg-inline--fa.fa-chevron-down {
+      color: white;
+      font-size: 32px;
+      padding-right: 20px;
+   }
+   &__description {
+      display: block;
+      background-color: #F6F6F6;
+      padding: 10px;
+
+   }
+}
+

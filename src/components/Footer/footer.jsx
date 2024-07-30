@@ -8,7 +8,7 @@ export function Footer() {
       <div className='footer__logo'>
         <img src={LogoFooter} alt="Logo de Kasa" />
       </div>
-      <p className='footer__text'>© Kasa. All rights reserved</p>
+      <p className='footer__text'>© 2020 Kasa. All<br className='footer__br'/> rights reserved</p>
       </footer>
   )
 }
