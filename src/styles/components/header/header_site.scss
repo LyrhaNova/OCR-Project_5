@@ -2,7 +2,7 @@
    display: flex;
    justify-content: space-between;
    width: 100%;
-   margin-top: 50px;
+   margin: 50px 0 60px ;
  
   //  &__logo {
   //    &__logo-img {
@@ -35,12 +35,13 @@
       height: 47px;
     }
     &__nav {
-      width: 45%;
+      // width: 45%;
+      width: 140px;
       align-items: center;
       margin: 0;
     }
     &__link {
-      font-size: 16px;
+      font-size: 14px;
     }
    }
    }

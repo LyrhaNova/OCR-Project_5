@@ -2,6 +2,7 @@ import {
    BrowserRouter as Router,
    Routes,
    Route,
+   useParams,
  } from "react-router-dom";
 import { Home } from '../pages/HomePage'
 import { About } from '../pages/AboutPage'
