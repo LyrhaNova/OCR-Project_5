@@ -7,6 +7,7 @@
    height: 415px;
    border-radius: 20px;
    overflow: hidden;
+   margin-bottom: 27px;
    &__slides {
       display: flex;
       transition: transform 0.7s ease-in-out;
@@ -48,10 +49,11 @@
       font-size: 16px;
       letter-spacing: -2px;
     }
+    .svg-inline--fa {
+      color: white;
+      background-color: none;
+      font-size: 80px;
+    }
  }
  
- .svg-inline--fa {
-   color: white;
-   background-color: none;
-   font-size: 80px;
- }
+

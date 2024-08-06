@@ -1,0 +1,24 @@
+@media (max-width: 540px) {
+   .listContainer {
+      & ul {
+         width: 100%;
+      }
+      &__li {
+         margin-top: 20px;
+      }
+      &__header {
+         height: 30px;
+      }
+      &__word {
+         font-size: 13px;
+      }
+      .svg-inline--fa {
+         font-size: 16px;
+      }
+      &__descriptionText {
+         padding: 15px;
+         font-size: 12px!important;
+         padding: 15px!important;
+      }
+   }
+}

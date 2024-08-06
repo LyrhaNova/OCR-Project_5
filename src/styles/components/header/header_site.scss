@@ -1,15 +1,10 @@
 .header {
    display: flex;
    justify-content: space-between;
-   width: 100%;
-   margin: 50px 0 60px ;
- 
-  //  &__logo {
-  //    &__logo-img {
-  //      max-width: 100%;
-  //      height: auto;
-  //    }
-  //  }
+   width: 95%;
+   margin: 50px auto 60px;
+   max-width: 1240px;
+  //  padding: 0 20px 0 20px;
 
    &__nav {
      display: flex;

@@ -1,0 +1,14 @@
+.star-rating {
+  display: flex;
+  .star {
+    .svg-inline--fa {
+      color: #E3E3E3;
+      font-size: 24px;
+      margin-right: 13px;
+    }
+    &.star__filled .svg-inline--fa {
+      color: #FF6060;
+      ;
+    }
+  }
+}

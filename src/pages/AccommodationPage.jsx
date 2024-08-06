@@ -1,8 +1,10 @@
 import { useParams, useNavigate  } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import jsonData from '../../public/data/logements.json';
-// import '../styles/components/Accomodation/accommodation.scss';
 import { Slideshow } from '../components/Slideshow/slideshow';
+import { StarRating } from '../components/StarRating/StarRating'
+import { CollapsibleItem } from '../components/CollapsibleItem/collapsibleItem'
+import '../styles/pages/accommodationPage.scss'
 
 export function Accommodation() {
   // useParams permet d'obtenir l'ID depuis l'url
@@ -18,12 +20,9 @@ export function Accommodation() {
     // Logement correspondant à l'id
     const foundLogement = jsonData.find(logement => logement.id === id);
 
-    // Debug: vérifier le logement trouvé
-    console.log('Found Logement:', foundLogement);
-
       // Si aucun logement n'est trouvé, rediriger vers une page d'erreur
       if (!foundLogement) {
-        navigate('../pages/ErrorPage'); // Assurez-vous que '/error' est le chemin vers votre page d'erreur
+        navigate('../pages/ErrorPage');
         return;
       }
 
@@ -39,8 +38,40 @@ export function Accommodation() {
   return (
     <section className="accommodation">
       <Slideshow pictures={currentLogement.pictures} />
-      <div style={{ fontSize: "50px" }}>
-        {currentLogement.title}
+      <div className='accommodation__container'>
+        <div className='accommodation__container__infos'>
+          <div className='accommodation__container__infos__title'>
+            {currentLogement.title}
+          </div>
+          {currentLogement.location}
+          <div className='accommodation__container__infos__tags'>
+            {currentLogement.tags.map((tag, index) => (
+              <span key={index} className='tag'>
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className='accommodation__container__details'>
+          <div className='accommodation__container__details__owner'>
+           {currentLogement.host.name}
+           <img src={currentLogement.host.picture} alt={currentLogement.host.name} />
+          </div>
+          <div className='accommodation__container__details__rating'>
+          <StarRating rating={currentLogement.rating} />
+          </div>
+        </div>
+      </div>
+      <div className='accommodation__collapse'>
+      <CollapsibleItem
+          word={"Description"}
+          description={currentLogement.description}
+          />
+          <CollapsibleItem
+          className="collapsible-item--equipments"
+          word={"Équipements"}
+          description={currentLogement.equipments}
+          />
       </div>
     </section>
   );
