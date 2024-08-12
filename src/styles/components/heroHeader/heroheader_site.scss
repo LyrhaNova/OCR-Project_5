@@ -44,8 +44,12 @@
     }
   }
   @media (max-width: 540px) {
+    &__image-container {
+      border-radius: 10px;
+    }
     & img {
       height: 111px;
+      border-radius: 10px;
     }
     &__title {
       font-size: 24px;

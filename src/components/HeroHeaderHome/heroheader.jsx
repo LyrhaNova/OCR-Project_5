@@ -1,4 +1,4 @@
-import Img from '../../assets/BackgroundHome.png';
+import Img from '../../assets/BackgroundHome.webp';
 import '../../styles/components/heroHeader/heroheader_site.scss';
 
 export function HeroHeader() {

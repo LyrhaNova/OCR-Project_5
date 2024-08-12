@@ -12,3 +12,14 @@
     }
   }
 }
+
+@media (max-width: 540px) {
+  .star-rating {
+    .star {
+      .svg-inline--fa {
+        font-size: 13px;
+        margin-right: 5px;
+      }
+    }
+  }
+  }

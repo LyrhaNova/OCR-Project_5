@@ -1,4 +1,4 @@
-import Img from '../../assets/BackgroundAbout.png'
+import Img from '../../assets/BackgroundAbout.webp'
 import '../../styles/components/heroHeader/heroheader_site.scss'
 
 

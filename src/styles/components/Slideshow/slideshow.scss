@@ -56,4 +56,19 @@
     }
  }
  
-
+@media (max-width: 540px) {
+  .carousel {
+    height: 100%;
+    max-height: 250px;
+    margin-bottom: 15px;
+    &__button {
+      padding: 0;
+    }
+    &__counter {
+      display: none;
+    }
+    .svg-inline--fa {
+      font-size: 25px;
+    }
+ }
+}

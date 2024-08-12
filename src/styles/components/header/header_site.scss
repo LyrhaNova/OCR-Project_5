@@ -1,10 +1,9 @@
 .header {
    display: flex;
    justify-content: space-between;
-   width: 95%;
+   width: 90%;
    margin: 50px auto 60px;
    max-width: 1240px;
-  //  padding: 0 20px 0 20px;
 
    &__nav {
      display: flex;
@@ -24,13 +23,16 @@
         text-underline-offset: 5px;
       }
    }
+  }
+
    @media (max-width: 540px) {
+    .header {
+      margin: 30px auto 30px;
     &__logo-img {
       width: 145px;
       height: 47px;
     }
     &__nav {
-      // width: 45%;
       width: 140px;
       align-items: center;
       margin: 0;
@@ -39,6 +41,6 @@
       font-size: 14px;
     }
    }
-   }
+  }
 
 

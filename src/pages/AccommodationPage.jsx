@@ -5,6 +5,7 @@ import { Slideshow } from '../components/Slideshow/slideshow';
 import { StarRating } from '../components/StarRating/StarRating'
 import { CollapsibleItem } from '../components/CollapsibleItem/collapsibleItem'
 import '../styles/pages/accommodationPage.scss'
+import '../styles/components/collapse/collapse.scss'
 
 export function Accommodation() {
   // useParams permet d'obtenir l'ID depuis l'url
@@ -13,10 +14,6 @@ export function Accommodation() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Vérifie les valeurs de id et jsonData
-    console.log('Logement ID:', id);
-    console.log('JSON Data:', jsonData);
-
     // Logement correspondant à l'id
     const foundLogement = jsonData.find(logement => logement.id === id);
 
@@ -31,7 +28,6 @@ export function Accommodation() {
 
     if (!currentLogement) {
       // Ne rien afficher pendant le chargement ou redirection
-      // Si la page Error est utilisé ici, elle s'affichera brièvement
     return null; 
   }
 

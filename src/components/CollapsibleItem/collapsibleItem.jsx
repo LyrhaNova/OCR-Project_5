@@ -1,54 +1,47 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 import '../../styles/components/collapse/collapse.scss';
 
 export function CollapsibleItem({ className, word, description }) {
+  // État pour gérer l'ouverture/fermeture du collapsible
   const [isOpen, setIsOpen] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false);
+  // Référence pour accéder au contenu de la description
+  const descriptionRef = useRef(null);
 
   const toggleDescription = () => {
-    if (!isAnimating) {
-      setIsAnimating(true);
-      setIsOpen(!isOpen);
+    setIsOpen(!isOpen);
+  };
+
+  // Effet useEffect pour ajuster la hauteur maximale de la description en fonction de son contenu
+  useEffect(() => {
+    if (descriptionRef.current) {
+      const descriptionElement = descriptionRef.current;
+      if (isOpen) {
+        descriptionElement.style.maxHeight = `${descriptionElement.scrollHeight}px`;
+      } else {
+        descriptionElement.style.maxHeight = '0';
+      }
     }
-  };
+  }, [isOpen]);
 
-  const handleAnimationEnd = () => {
-    setIsAnimating(false);
-  };
-
-  // return (
-  //   <li className="listContainer__li">
-  //     <div className="listContainer__header" onClick={toggleDescription}>
-  //       <h3 className='listContainer__word'>{word}</h3>
-  //       <FontAwesomeIcon
-  //         icon={faChevronUp}
-  //         className={isOpen ? 'rotate' : ''}
-  //       />
-  //     </div>
-  //     <div
-  //       className={`listContainer__description ${isOpen ? 'open' : 'close'}`}
-  //       onAnimationEnd={handleAnimationEnd}
-  //     >
-  //       <p className='listContainer__descriptionText'>{description}</p>
-  //     </div>
-  //   </li>
-  // );
+  // Rendu du composant
   return (
     <li className={`listContainer__li ${className}`}>
-      <div className="listContainer__header" onClick={toggleDescription}>
+      <div className="listContainer__header">
         <h3 className='listContainer__word'>{word}</h3>
         <FontAwesomeIcon
           icon={faChevronUp}
           className={isOpen ? 'rotate' : ''}
+          onClick={toggleDescription}
         />
       </div>
       <div
-        className={`listContainer__description ${isOpen ? 'open' : 'close'}`}
-        onAnimationEnd={handleAnimationEnd}
+        className={`listContainer__description ${isOpen ? 'open' : ''}`}
+        ref={descriptionRef}
       >
+        {/* Condition pour afficher la description sous forme de liste ou de paragraphe */}
         {Array.isArray(description) ? (
           <ul className="listContainer__descriptionList">
             {description.map((item, index) => (

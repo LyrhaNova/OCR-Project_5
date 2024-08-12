@@ -1,73 +1,43 @@
 .listContainer {
-   display: flex;
-   justify-content: center;
-   width: 100%;
-   & ul {
-     display: flex;
-     justify-content: center;
-     flex-direction: column;
-     width: 83%;
-     padding: 0;
-     margin: 0;
-   }
-   &__li {
-     width: 100%;
-     border-radius: 5px;
-     margin-top: 37px;
-     list-style-type: none;
-   }
- 
-   &__header {
-     display: flex;
-     background-color: #FF6060;
-     justify-content: space-between;
-     align-items: center;
-     height: 54px;
-     padding: 0 15px 0 15px;
-     border-radius: 10px;
-   }
- 
-   &__word {
-     color: white;
-     font-size: 24px;
-   }
- 
-
- }
-
- .svg-inline--fa {
-  cursor: pointer;
-  color: white;
-  font-size: 32px;
-  transition: transform 0.5s;
-  &.rotate {
-    transform: rotate(-180deg);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  & ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 83%;
+    padding: 0;
+    margin: 0;
+  }
+  &__li {
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 37px;
+    list-style-type: none;
+  }
+  &__header {
+    display: flex;
+    background-color: #FF6060;
+    justify-content: space-between;
+    align-items: center;
+    height: 54px;
+    padding: 0 15px 0 15px;
+    border-radius: 10px;
+  }
+  &__word {
+    color: white;
+    font-size: 24px;
   }
 }
 
-// Définir une variable pour la durée d'animation
-$animation-duration: 0.3s;
-
-// Animation collapse
-@keyframes openCollapse {
- from {
-   max-height: 0;
-   opacity: 1;
- }
- to {
-   max-height: 500px;
-   opacity: 1;
- }
-}
-
-@keyframes closeCollapse {
- from {
-   max-height: 500px;
-   opacity: 1;
- }
- to {
-   max-height: 0;
-   opacity: 1;
+.svg-inline--fa {
+ color: white;
+ font-size: 32px;
+ cursor: pointer;
+ transition: transform 0.3s;
+ &.rotate {
+   transform: rotate(-180deg);
  }
 }
 
@@ -76,16 +46,11 @@ $animation-duration: 0.3s;
  background-color: #FBFBFB;
  overflow: hidden;
  max-height: 0;
- opacity: 0;
- transition: max-height $animation-duration ease, opacity $animation-duration ease;
+ transition: max-height 0.3s ease;
 }
 
 .listContainer__description.open {
- animation: openCollapse $animation-duration ease forwards;
-}
-
-.listContainer__description.close {
- animation: closeCollapse $animation-duration ease forwards;
+ max-height: 500px;
 }
 
 .listContainer__descriptionText {
@@ -96,7 +61,8 @@ $animation-duration: 0.3s;
 }
 
 @media (max-width: 540px) {
-   .listContainer {
+   .listContainer,
+   .accommodation__collapse {
       & ul {
          width: 100%;
       }

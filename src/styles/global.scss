@@ -1,13 +1,14 @@
+$main-color: #FF6060;
+
+
 html {
    overflow-y: scroll;
 }
 
 body {
-
    height: 100%;
    margin: 0;
    font-family: Montserrat, sans serrif;
-
  }
 
  main {
@@ -17,10 +18,12 @@ body {
    flex-direction: column;
    min-height: 100vh;
    padding: 0 20px 0 20px;
-   // padding: 0 20px 0 20px;
  }
 
 a {
    text-decoration: none;
    color: black;
+}
+
+@media (max-width: 540px) {
 }

@@ -1,8 +1,6 @@
 import { HeroHeaderAbout } from '../components/HeroHeaderAbout/heroheader_about'
 import { CollapsibleItem } from '../components/CollapsibleItem/collapsibleItem'
 
-
-
 export function About() {
   const words = [
     { word: 'Fiabilité', description: 'Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.' },

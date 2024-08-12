@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import '../../styles/components/cards/cards.scss';
 
+// Composant de carte individuelle
 const Card = ({ title, image, onClick }) => {
   return (
     <article className="cards" onClick={onClick}>
@@ -14,17 +15,13 @@ const Card = ({ title, image, onClick }) => {
   );
 };
 
-Card.propTypes = {
-  title: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
-};
+
 
 export function Cards() {
   const [logements, setLogements] = useState([]);
   const navigate = useNavigate();
 
-  // Fonction pour récupérer les données
+  // Fonction pour récupérer les données des logements depuis un fichier JSON
   const getData = () => {
     fetch('../../../public/data/logements.json')
       .then(response => {
@@ -34,8 +31,7 @@ export function Cards() {
         return response.json();
       })
       .then(data => {
-        // console.log('Data loaded:', data);
-        // Mise à jour des données
+        // Mise à jour des données des logements dans l'état local
         setLogements(data);
       })
       .catch(error => {
@@ -43,14 +39,14 @@ export function Cards() {
       });
   };
 
+  // Utilisation de useEffect pour appeler getData une fois au chargement
   useEffect(() => {
     getData();
   }, []);
 
+  // Gestion du clic sur une carte de logement, redirige vers la page de détails
   const handleCardClick = (id) => {
-    // Redirection vers la page de détails
     navigate(`/accommodation/${id}`);
-    // navigate(`accommodation${id}`);
   };
 
   if (!Array.isArray(logements) || logements.length === 0) {
@@ -73,12 +69,8 @@ export function Cards() {
   );
 }
 
-Cards.propTypes = {
-  logements: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      cover: PropTypes.string.isRequired
-    })
-  )
+Card.propTypes = {
+  title: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
