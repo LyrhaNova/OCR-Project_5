@@ -14,6 +14,14 @@ export function CollapsibleItem({ className, word, description }) {
     setIsOpen(!isOpen);
   };
 
+  // Gestion de l'événement au clavier pour l'icône
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      toggleDescription();
+    }
+  };
+
   // Effet useEffect pour ajuster la hauteur maximale de la description en fonction de son contenu
   useEffect(() => {
     if (descriptionRef.current) {
@@ -35,6 +43,10 @@ export function CollapsibleItem({ className, word, description }) {
           icon={faChevronUp}
           className={isOpen ? 'rotate' : ''}
           onClick={toggleDescription}
+          tabIndex="0"
+          onKeyDown={handleKeyDown}
+          aria-expanded={isOpen}
+          aria-label={`Toggle ${word}`}
         />
       </div>
       <div

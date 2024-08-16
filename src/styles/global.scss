@@ -25,5 +25,9 @@ a {
    color: black;
 }
 
+:focus-visible {
+   outline: #0099cc solid 4px;
+ }
+
 @media (max-width: 540px) {
 }

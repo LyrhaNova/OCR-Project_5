@@ -5,8 +5,23 @@ import '../../styles/components/cards/cards.scss';
 
 // Composant de carte individuelle
 const Card = ({ title, image, onClick }) => {
+
+  // Gestion de l'événement au clavier
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      onClick();
+    }
+  };
+
   return (
-    <article className="cards" onClick={onClick}>
+    <article
+      className="cards"
+      onClick={onClick}
+      aria-label={title}
+      tabIndex="0"
+      onKeyDown={handleKeyDown}
+    >
       <img src={image} alt={title} className="cards__image" />
       <div className='cards__overlay'>
         <h2 className="cards__title">{title}</h2>
