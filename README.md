@@ -147,4 +147,4 @@ Pour plus d'informations sur les outils et bibliothèques utilisés dans ce proj
 | ``VISUAL STUDIO CODE`` | _IDE_                                          |
 | ``GIT``                | _Logiciel de gestion de versions_              |
 | ``React``               | _Bibliothèque open source JavaScript_|
-| ``Vite``        | _Serveur de développement local_                                                                      |
+| ``Vite``        | _Serveur de développement local_                      |
