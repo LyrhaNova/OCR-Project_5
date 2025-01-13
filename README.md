@@ -1,6 +1,3 @@
-
-
-
 # OCR-Project_5
 
 ## A PROPOS
@@ -14,6 +11,7 @@ Dans le cadre de la formation OpenClassRooms en Développement web, le ``PROJET 
 - ⬆️ [Objectifs pédagogiques](#objectifs-pedagogiques)
 - 🚀 [Installation](#installation)
 - 🏗️ [Construit avec](#construit-avec)
+- 🖼 [Galerie d'images](#galerie-dimages)
 
 ## SCENARIO
 
@@ -148,3 +146,12 @@ Pour plus d'informations sur les outils et bibliothèques utilisés dans ce proj
 | ``GIT``                | _Logiciel de gestion de versions_              |
 | ``React``               | _Bibliothèque open source JavaScript_|
 | ``Vite``        | _Serveur de développement local_                      |
+
+
+## Galerie d'images
+
+![Capture 1](https://i.imgur.com/KadtDlk.png)
+
+![Capture 2](https://i.imgur.com/frdQVy0.png)
+
+![Capture 3](https://i.imgur.com/jKkoQ77.png)
